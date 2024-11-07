@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Slider</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <!-- Slider Container -->
+    <div class="slider">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <img src="images.jpg" alt="Poster 1">
+            <div class="caption">Welcome to Our Car Rental Service</div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="image2.png" alt="Poster 2">
+            <div class="caption">Wide Selection of Cars for Every Journey</div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="image3.jpg" alt="Poster 3">
+            <div class="caption">Affordable Prices and Reliable Service</div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+</html>

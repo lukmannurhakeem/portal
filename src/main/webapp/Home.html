@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental</title>
+    <link rel="stylesheet" href="Homee.css">
+    <link rel="stylesheet" href="test.css">
+    <script src="test.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+    
+    <nav>
+		<div class="nav-links">
+			<a href=""></a>
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="#">Car list</a></li>
+			<li><a href="https://wa.me/60184063115">Contact Us</a></li>
+			<li><a href="login.html">Login</a></li>
+		</ul>
+		</div>
+	</nav>
+
+    </header>
+    
+        <!-- Slider Container -->
+    <div class="slider">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <img src="bejaa king.png" alt="Poster 1">
+            <div class="caption">Welcome to Our Car Rental Service</div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="Ready to.png" alt="Poster 2">
+            <div class="caption">Wide Selection of Cars for Every Journey</div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="image3.jpg" alt="Poster 3">
+            <div class="caption">We Have the Most Reliable Service</div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- Car Listing Section -->
+    <section class="car-list">
+        <h2>Available Cars for Rent</h2>
+
+        <div class="car">
+            <img src="bezza.jpg" alt="Car 1">
+            <h3>Sedan - Bezza</h3>
+            <p>Price: RM300/day</p>
+            <button onclick="bezza()">Rent Now</button>
+        </div>
+			<script>
+				function bezza() {
+ 				location.replace("bezza.html")
+				}
+			</script>
+        <div class="car">
+            <img src="crv2.jpg" alt="Car 2">
+            <h3>SUV - Honda CRV</h3>
+            <p>Price: RM500/day</p>
+            <button onclick="honda()">Rent Now</button>
+        </div>
+        	<script>
+				function honda() {
+ 				location.replace("honda.html")
+				}
+			</script>
+
+        <div class="car">
+            <img src="vfire.jpg" alt="Car 3">
+            <h3>Premium - Toyota Velfire</h3>
+            <p>Price: RM1500/day</p>
+            <button onclick="velfire()">Rent Now</button>
+        </div>
+             <script>
+				function velfire() {
+ 				location.replace("velfire.html")
+				}
+			</script>
+    </section>
+</body>
+<footer>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <ul class="social-links">
+                <li><a href="https://www.facebook.com/Perodua/?locale=ms_MY">Facebook</a></li>
+                <li><a href="https://x.com/Honda?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></li>
+                <li><a href="https://www.instagram.com/toyotamy/?hl=en">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Car Rental. All rights reserved.</p>
+    </div>
+</footer>
+</html>
