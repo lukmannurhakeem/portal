@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add New Car</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/styles.css}"/>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}"/>
+</head>
+<body>
+
+<header class="navbar navbar-expand-lg navbar-dark">
+    <label class="mt-2 ms-5 font-weight-bold h5">
+        <a th:href="@{/dashboard/}">Car Listings</a>
+        <span class="logo_com font-weight-bold h5" style="color: white">.com</span>
+    </label>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a sec:authorize="hasAuthority('Job Seeker')" class="nav-link" th:href="@{/car-search/}">
+                    <i class="fas fa-car"></i>Search for Cars</a>
+            </li>
+            <li class="nav-item">
+                <a sec:authorize="hasAuthority('Job Seeker')" class="nav-link" th:href="@{/saved-cars/}">
+                    <i class="fa-solid fa-eye"></i>View Saved Cars</a>
+            </li>
+
+            <li class="nav-item">
+                <a sec:authorize="hasAuthority('Recruiter')" class="nav-link" th:href="@{/dashboard/addCar}">
+                    <i class="fa-solid fa-file-circle-plus"></i> Add New Car
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a sec:authorize="hasAuthority('Job Seeker')" class="nav-link" th:href="@{/job-seeker-profile/}">
+                    <i class="fa-solid fa-pencil"></i>Edit Profile</a>
+            </li>
+
+            <li class="nav-item active">
+                <a sec:authorize="hasAuthority('Recruiter')" class="nav-link" th:href="@{/dashboard/}">
+                    <i class="fa-solid fa-eye"></i>View Your Cars</a>
+            </li>
+            <li class="nav-item">
+                <a sec:authorize="hasAuthority('Recruiter')" class="nav-link" th:href="@{/recruiter-profile/}">
+                    <i class="fa-solid fa-pencil"></i>Edit Account</a>
+            </li>
+        </ul>
+
+        <button class="myBtn-light me-5" onclick="window.location.href='/logout'">Logout</button>
+    </div>
+</header>
+
+<section class="section">
+    <article>
+        <div class="box mt-3">
+            <h2>Add New Car</h2>
+            <form th:action="@{/dashboard/add-car}" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="make" class="form-label">Make</label>
+                    <input type="text" class="form-control" id="make" name="make" required>
+                </div>
+                <div class="mb-3">
+                    <label for="model" class="form-label">Model</label>
+                    <input type="text" class="form-control" id="model" name="model" required>
+                </div>
+                <div class="mb-3">
+                    <label for="year" class="form-label">Year</label>
+                    <input type="number" class="form-control" id="year" name="year" required>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location" required>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="price" name="price" required>
+                </div>
+
+                <!-- Image Upload Field -->
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Car Image</label>
+                    <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Car</button>
+            </form>
+        </div>
+    </article>
+</section>
+
+<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

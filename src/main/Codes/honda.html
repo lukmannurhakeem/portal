@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Service</title>
+    <link rel="stylesheet" href="bezza.css">
+     <link rel="stylesheet" href="Homee.css">  <!-- Link to external CSS -->
+</head>
+<body>
+
+ <header class="header">
+    
+    <nav>
+		<div class="nav-links">
+			<a href=""></a>
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="#">Car list</a></li>
+			<li><a href="https://wa.me/60184063115">Contact Us</a></li>
+			<li><a href="login.html">Login</a></li>
+			
+		</ul>
+		</div>
+	</nav>
+
+    </header>
+     <!-- Order Form Section -->
+    <section id="order" class="order-form">
+        <h2>Place Your Order for Honda</h2>
+        <form>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+			<label for="Phone">Phone Number:</label>
+			<input type="Phone" id="Phone" name="Phone" required>
+            <label for="days">Number of Days:</label>
+        <input type="number" id="days" name="days" min="1" placeholder="Enter the number of days" required>
+        <button type="button" onclick="calculateRental()">Calculate Total Cost</button>
+
+        <div class="result" id="result"></div>
+            <a href="invoice.html" onclick="generateInvoice()" style="text-decoration: none;">
+    <button type="button">Submit Order</button>
+</a>
+        </form>           
+    </section>
+    
+    
+
+<script>
+    // Function to calculate the rental cost
+    function calculateRental() {
+        const dailyRateBezza = 300; // Fixed rate per day in RM
+        const days = document.getElementById('days').value;
+
+        if (days) {
+            const totalCost = dailyRate * days;
+            document.getElementById('result').textContent = `Total Cost: RM${totalCost}`;
+        } else {
+            document.getElementById('result').textContent = "Please enter the number of days.";
+        }
+    }
+</script>
+
+</body>
+</html>

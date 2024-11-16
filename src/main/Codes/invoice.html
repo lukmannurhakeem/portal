@@ -1,0 +1,60 @@
+
+<link rel="stylesheet" href="invoice.css">
+<div class="invoice" id="invoice">
+    <div class="invoice-header">
+        <h2>Invoice</h2>
+        <p id="invoiceCustomerName"></p>
+        <p id="invoiceCustomerEmail"></p>
+        <p id="invoiceCustomerPhone"></p>
+    </div>
+
+    <table class="invoice-items">
+        <thead>
+            <tr>
+                <th>Service</th>
+                <th>Days</th>
+                <th>Price Per Day</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Rental Service</td>
+                <td id="invoiceDays"></td>
+                <td id="pricePerDay">$50</td>
+                <td id="invoiceTotalPrice"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="invoice-footer">
+        <p>Total Amount Due: $<span id="finalTotal"></span></p>
+    </div>
+</div>
+
+<script>
+    // Define the price per day (you can change this value)
+    const pricePerDay = 300;
+
+    function generateInvoice() {
+        // Retrieve form values
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('Phone Number').value;
+        var days = document.getElementById('days').value;
+
+        // Calculate total cost
+        var totalCost = days * pricePerDay;
+
+        // Display invoice values
+        document.getElementById('invoiceCustomerName').innerText = 'Name: ' + name;
+        document.getElementById('invoiceCustomerEmail').innerText = 'Email: ' + email;
+        document.getElementById('invoiceCustomerPhone').innerText = 'Phone: ' + phone;
+        document.getElementById('invoiceDays').innerText = days;
+        document.getElementById('invoiceTotalPrice').innerText = '$' + totalCost.toFixed(2);
+        document.getElementById('finalTotal').innerText = totalCost.toFixed(2);
+
+        // Show the invoice
+        document.getElementById('invoice').style.display = 'block';
+    }
+</script>
